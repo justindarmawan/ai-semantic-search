@@ -1,4 +1,5 @@
 import os
+import ollama
 from langchain_community.vectorstores import Qdrant
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import Ollama
@@ -66,5 +67,32 @@ class RAGPipeline:
 
         Provide a clear and concise answer only using the given context.
         """
-        
+
         return self.llm(prompt)
+    
+    def query_stream(self, question: str):
+        docs = self.vector_db.similarity_search(question, k=3)
+        context = "\n".join([doc.page_content for doc in docs])
+
+        prompt = f"""
+        You are an AI assistant. 
+        Answer the question strictly based on the context below. 
+        If the answer is not found in the context, respond exactly with: "Not found in the document."
+
+        CONTEXT:
+        {context}
+
+        QUESTION:
+        {question}
+
+        Provide a clear and concise answer only using the given context.
+        """
+
+        stream = ollama.chat(
+            model="phi",
+            messages=[{"role": "user", "content": prompt}],
+            stream=True
+        )
+
+        for chunk in stream:
+            yield chunk["message"]["content"]

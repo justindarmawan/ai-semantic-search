@@ -60,7 +60,8 @@ curl -X POST "http://localhost:8000/documents"      -F "file=@sample2.pdf"
 ### Query the knowledge base
 
 ```bash
-curl -X POST "http://localhost:8000/query"      -F "question=Who is Justin Darmawan?"
+curl -X POST "http://localhost:8000/query" -F "question=Who is Justin Darmawan?" -F "stream=false"
+curl -N -X POST http://localhost:8000/query -F "question=Who is Justin Darmawan?" -F "stream=true"
 ```
 
 ## Container Management
