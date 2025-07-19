@@ -6,3 +6,4 @@ qdrant-client
 sentence-transformers
 requests
 python-multipart
+pypdf

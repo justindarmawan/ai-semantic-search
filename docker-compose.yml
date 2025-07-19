@@ -7,6 +7,9 @@ services:
     depends_on:
       - qdrant
       - ollama
+    volumes:
+      - ./api:/app 
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
   qdrant:
     image: qdrant/qdrant
@@ -16,7 +19,7 @@ services:
       - qdrant_data:/qdrant/storage
 
   ollama:
-    image: ollama/ollama
+    image: ollama/ollama 
     runtime: nvidia 
     ports:
       - "11434:11434"
