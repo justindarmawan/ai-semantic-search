@@ -23,7 +23,7 @@ Fully containerized with **Docker Compose**.
 Clone the repository:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/justindarmawan/ai-semantic-search
 cd ai-semantic-search
 ```
 
