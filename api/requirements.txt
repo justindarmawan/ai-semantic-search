@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+qdrant-client
+sentence-transformers
+requests
+python-multipart

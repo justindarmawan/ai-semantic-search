@@ -1,0 +1,9 @@
+Justin Darmawan is an AI Engineer who specializes in building semantic search pipelines using Python and FastAPI. 
+He has extensive experience with retrieval-augmented generation (RAG) systems and vector databases like Qdrant. 
+Justin regularly experiments with lightweight large language models such as Phi-2 to create interactive and efficient AI-powered systems.
+
+He often uses Docker for containerization, ensuring that his applications are easy to deploy across various environments. 
+Justin is passionate about optimizing the accuracy and speed of retrieval so that users can quickly find relevant information from large collections of documents.
+
+He also has a background in natural language processing (NLP), with experience using libraries like spaCy, NLTK, and HuggingFace tokenizers. 
+His vision is to create technology that helps people discover the right knowledge at the right time.
